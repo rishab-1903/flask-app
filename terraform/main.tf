@@ -92,7 +92,7 @@ resource "google_compute_instance" "frontend_vm" {
   tags = ["http-server"]
 
   metadata_startup_script = templatefile("${path.module}/startup_script.sh", {
-    docker_image_name = "gcr.io/rishab-gupta-cwx-internal/product-frontend"
+    docker_image_name = "<Docker image name for frontend>"
     gke_backend_ip    = module.gke.backend_internal_ip
   })
 

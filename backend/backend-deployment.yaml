@@ -14,21 +14,21 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: gcr.io/rishab-gupta-cwx-internal/product-backend
+        image: <docker image link>
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
         env:
         - name: DB_USER
-          value: "postgres"
+          value: "<db_user DB_NAME>"
         - name: DB_PASSWORD
-          value: "rishab1903"
+          value: "<db password>"
         - name: DB_HOST
-          value: "10.22.112.3"
+          value: "<DB IP>"
         - name: DB_PORT
-          value: "5432"
+          value: "<port num - 5432 def>"
         - name: DB_NAME
-          value: "products_db"
+          value: "<DB_NAME>"
         - name: API_TOKEN
           value: "mysecrettoken123"
         readinessProbe:

@@ -21,8 +21,8 @@ jobs:
       uses: google-github-actions/auth@v2
       with:
         token_format: 'access_token'
-        workload_identity_provider: 'projects/332413712515/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
-        service_account: 'github-actions-sa@rishab-gupta-cwx-internal.iam.gserviceaccount.com'
+        workload_identity_provider: 'projects/<id>/locations/global/workloadIdentityPools/github-pool/providers/github-provider'
+        service_account: '<svc service_account>@<gcp account>.iam.gserviceaccount.com'
    
     - name: Clear Docker config
       run: rm -rf ~/.docker
@@ -36,7 +36,7 @@ jobs:
     - name: Build and Push Docker Image
       run: |
         SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-        IMAGE_NAME=gcr.io/rishab-gupta-cwx-internal/product-frontend
+        IMAGE_NAME=<docker image link>
 
         docker build -t $IMAGE_NAME:latest -t $IMAGE_NAME:$SHORT_SHA ./frontend
         docker push $IMAGE_NAME:latest

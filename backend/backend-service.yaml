@@ -6,7 +6,7 @@ metadata:
     cloud.google.com/load-balancer-type: "Internal"
 spec:
   type: LoadBalancer
-  loadBalancerIP: 10.10.0.50
+  loadBalancerIP: <LB IP>
   selector:
     app: product-backend
   ports:
